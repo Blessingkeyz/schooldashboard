@@ -5,10 +5,8 @@
       :key="stat.label"
       class="bg-white p-4 rounded-lg shadow-md flex items-center space-x-4"
     >
-      <div
-        :class="`text-${stat.color}-500 bg-${stat.color}-100 p-3 rounded-full`"
-      >
-        <stat.icon class="h-6 w-6" />
+      <div :class="`text-${stat.color} bg-${stat.color} p-3 rounded-full`">
+        <!-- <stat.icon class="h-6 w-6" /> -->
       </div>
       <div>
         <p class="text-2xl font-semibold">{{ stat.value }}</p>
@@ -20,12 +18,12 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import {
-  UserIcon,
-  CalendarIcon,
-  ChartBarIcon,
-  ShoppingCartIcon,
-} from '@heroicons/vue/solid'
+// import {
+//   UserIcon,
+//   CalendarIcon,
+//   ChartBarIcon,
+//   ShoppingCartIcon,
+// } from '@heroicons/vue/solid'
 
 export default defineComponent({
   setup() {
