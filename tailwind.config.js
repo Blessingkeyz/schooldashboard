@@ -3,7 +3,11 @@ export default {
   content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
 
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        Poppins: ['poppins', 'sans-serif'],
+      },
+    },
   },
   plugins: [],
 }

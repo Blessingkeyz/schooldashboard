@@ -1,85 +1,72 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+import { ref, onMounted, onUnmounted, watch } from 'vue'
+import { RouterView } from 'vue-router'
+import SidebarPage from './components/SidebarPage.vue'
+
+const showSidebar = ref(false)
+
+const isDesktop = ref(window.innerWidth >= 1024)
+
+const toggleSidebar = () => {
+  if (!isDesktop.value) {
+    showSidebar.value = !showSidebar.value
+  }
+}
+
+const updateIsDesktop = () => {
+  isDesktop.value = window.matchMedia('(min-width: 1024px)').matches
+  if (!isDesktop.value) {
+    showSidebar.value = false
+  }
+}
+
+// const handleResize = () => {
+//   windowWidth.value = window.innerWidth
+//   if (windowWidth.value < 1024) showSidebar.value = false
+// }
+// console.log(windowWidth)
+watch(isDesktop, newValue => {
+  if (!newValue) {
+    showSidebar.value = false
+  }
+})
+
+onMounted(() => {
+  const mediaQuery = window.matchMedia('(min-width: 1024px)')
+
+  mediaQuery.addEventListener('change', updateIsDesktop)
+  updateIsDesktop()
+})
+
+onUnmounted(() => {
+  const mediaQuery = window.matchMedia('(min-width: 1024px)')
+
+  mediaQuery.removeEventListener('change', updateIsDesktop)
+  // updateIsDesktop()
+})
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+  <div class="flex">
+    <SidebarPage
+      v-if="showSidebar || isDesktop"
+      :class="{
+        'fixed inset-y-0 left-0 w-64 bg-gray-800 z-50 transform transition-transform duration-300 ease-in-out':
+          !isDesktop,
+        'translate-x-0': showSidebar,
+        '-translate-x-full': !showSidebar && !isDesktop,
+      }"
+    />
+    <div
+      v-if="showSidebar && !isDesktop"
+      @click="toggleSidebar"
+      class="bg-black z-40 bg-opacity-50 fixed inset-0 lg:hidden"
+    ></div>
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
+    <div class="w-full">
+      <main class="overflow-y-auto">
+        <RouterView :toggleSidebar="toggleSidebar" />
+      </main>
     </div>
-  </header>
-
-  <RouterView />
+  </div>
 </template>
-
-<style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
-}
-</style>
