@@ -5,6 +5,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import DashboardPage from '@/views/DashboardPage.vue'
 import StudentsPage from '@/views/StudentsPage.vue'
 import AddStudents from '@/views/AddStudents.vue'
+import AddTeachers from '../views/AddTeachers.vue'
 import TeachersPage from '@/views/TeachersPage.vue'
 import EventsPage from '@/views/EventsPage.vue'
 import FinancePage from '@/views/FinancePage.vue'
@@ -18,6 +19,7 @@ const routes = [
   { path: '/students', name: 'Students', component: StudentsPage },
   { path: '/addstudents', name: 'AddStudents', component: AddStudents },
   { path: '/teachers', name: 'Teachers', component: TeachersPage },
+  { path: '/addteachers', name: 'AddTeachers', component: AddTeachers },
   { path: '/events', name: 'Events', component: EventsPage },
   { path: '/finance', name: 'Finance', component: FinancePage },
   { path: '/foods', name: 'Foods', component: FoodsPage },

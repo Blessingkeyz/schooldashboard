@@ -19,12 +19,12 @@
       <!-- search bar end -->
       <div class="flex items-center space-x-4">
         <button
-          class="w-16 h-16 rounded-full justify-items-center bg-white text-black"
+          class="w-16 h-16 rounded-full items-center justify-center flex bg-white text-black"
         >
           <img src="/assets/bell.svg" alt="notificationicon" class="w-6 h-6" />
         </button>
         <button
-          class="justify-items-center w-16 h-16 rounded-full bg-white text-black"
+          class="items-center justify-center flex w-16 h-16 rounded-full bg-white text-black"
         >
           <img src="/assets/gear.svg" alt="settingsicon" class="w-6 h-6" />
         </button>
@@ -87,7 +87,7 @@
         }"
       >
         <button
-          class="w-8 h-8 md:w-10 md:h-10 rounded-full justify-items-center bg-white text-black"
+          class="w-8 h-8 md:w-10 md:h-10 rounded-full items-center justify-center flex bg-white text-black"
         >
           <img
             src="/assets/bell.svg"
@@ -96,7 +96,7 @@
           />
         </button>
         <button
-          class="justify-items-center w-8 h-8 md:w-10 md:h-10 rounded-full bg-white text-black"
+          class="items-center justify-center flex w-8 h-8 md:w-10 md:h-10 rounded-full bg-white text-black"
         >
           <img
             src="/assets/gear.svg"

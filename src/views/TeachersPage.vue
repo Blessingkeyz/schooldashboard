@@ -33,7 +33,7 @@
             />
           </button>
           <router-link
-            :to="'/addstudents'"
+            :to="'/addteachers'"
             class="w-12 md:w-52 h-8 md:h-12 lg:h-[60px] rounded-xl md:rounded-full bg-gradient-to-b from-[#252472] to-[#2321BD] text-white text-lg items-center gap-5 flex justify-center"
           >
             <img src="/assets/add.svg" alt="notificationicon" class="w-4 h-4" />
@@ -43,28 +43,32 @@
       </div>
     </div>
     <!-- 2nd header ends -->
-    <div class="py-5 px-2 lg:px-5 space-y-4">
+    <div class="py-5 flex justify-center px-2 lg:px-5 space-y-4">
       <div
-        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-8"
+        class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-6 gap-x-8 gap-y-8"
       >
         <div
-          class="bg-white md:w-[338px] h-[352px] grid rounded-3xl p-5"
+          class="bg-white 2xl:w-[338px] xl:w-[250px] md:w-[220px] h-[280px] md:h-[352px] grid rounded-3xl lg:p-1 xl:p-5"
           v-for="teacher in teachers.teachers"
           :key="teacher.id"
         >
           <img
             src="/assets/dots copy.svg"
             alt="dots"
-            class="h-6 w-6 absolute ml-72 md:ml-64 rounded-full"
+            class="w-4 h-4 md:h-6 md:w-6 absolute mt-2 md:mt-2 ml-[135px] lg:mt-0 lg:ml-[170px] xl:mt-0 xl:ml-[180px] 2xl:mt-0 2xl:ml-64 md:ml-[170px] rounded-full"
           />
           <div class="items-center justify-items-center grid p-5">
-            <div class="bg-[#C1BBEB] rounded-full w-[120px] h-[120px]">
+            <div
+              class="bg-[#C1BBEB] rounded-full w-20 h-20 md:h-[120px] md:w-[120px]"
+            >
               <!-- <img src="" alt="Profile" class="h-10 w-10 rounded-full" /> -->
             </div>
-            <h3 class="font-bold text-2xl text-[#303972]">
+            <h3
+              class="font-bold mb-4 text-center text-lg md:text-2xl text-[#303972]"
+            >
               {{ teacher.name }}
             </h3>
-            <p class="text-lg -mt-5 mb-2 text-[#A098AE]">
+            <p class="text-sm md:text-lg -mt-5 mb-2 text-[#A098AE]">
               {{ teacher.subject }}
             </p>
             <div class="flex items-center gap-5 justify-center">
@@ -89,6 +93,44 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+    <!-- footer -->
+    <div class="flex ml-5 mr-2 my-10 justify-between items-center">
+      <p class="text-sm md:text-lg text-[#A098AE]">
+        Showing <span class="font-bold">1-5</span> from
+        <span class="font-bold">100</span> data
+      </p>
+      <div
+        class="flex space-x-1 md:space-x-2 items-center justify-items-center"
+      >
+        <img
+          src="/assets/nextbutton.svg"
+          alt="call icon"
+          class="h-4 w-4 md:h-6 md:w-6 outline-white rounded-full"
+        />
+
+        <div
+          class="bg-[#4D44B5] rounded-full items-center flex justify-center w-6 h-6 md:w-10 md:h-10"
+        >
+          1
+        </div>
+        <div
+          class="bg-[#4D44B5] rounded-full items-center flex justify-center w-6 h-6 md:w-10 md:h-10"
+        >
+          2
+        </div>
+        <div
+          class="bg-[#4D44B5] rounded-full items-center flex justify-center w-6 h-6 md:w-10 md:h-10"
+        >
+          3
+        </div>
+
+        <img
+          src="/assets/nextbutton.svg"
+          alt="next"
+          class="h-4 w-4 md:h-6 md:w-6 rotate-180 outline-white rounded-full"
+        />
       </div>
     </div>
   </section>

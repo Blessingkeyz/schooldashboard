@@ -43,28 +43,32 @@
       </div>
     </div>
     <!-- 2nd header ends -->
-    <div class="py-5 px-2 lg:px-5 space-y-4">
+    <div class="py-5 flex justify-center px-2 lg:px-5 space-y-4">
       <div
-        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-8"
+        class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-6 gap-x-8 gap-y-8"
       >
         <div
-          class="bg-white md:w-[338px] h-[352px] grid rounded-3xl p-5"
+          class="bg-white 2xl:w-[338px] xl:w-[250px] md:w-[220px] h-[280px] md:h-[352px] grid rounded-3xl lg:p-1 xl:p-5"
           v-for="teacher in teachers.teachers"
           :key="teacher.id"
         >
           <img
             src="/assets/dots copy.svg"
             alt="dots"
-            class="h-6 w-6 absolute ml-72 md:ml-64 rounded-full"
+            class="w-4 h-4 md:h-6 md:w-6 absolute mt-2 md:mt-2 ml-[135px] lg:mt-0 lg:ml-[170px] xl:mt-0 xl:ml-[180px] 2xl:mt-0 2xl:ml-64 md:ml-[170px] rounded-full"
           />
           <div class="items-center justify-items-center grid p-5">
-            <div class="bg-[#C1BBEB] rounded-full w-[120px] h-[120px]">
+            <div
+              class="bg-[#C1BBEB] rounded-full w-20 h-20 md:h-[120px] md:w-[120px]"
+            >
               <!-- <img src="" alt="Profile" class="h-10 w-10 rounded-full" /> -->
             </div>
-            <h3 class="font-bold text-2xl text-[#303972]">
+            <h3
+              class="font-bold mb-4 text-center text-lg md:text-2xl text-[#303972]"
+            >
               {{ teacher.name }}
             </h3>
-            <p class="text-lg -mt-5 mb-2 text-[#A098AE]">
+            <p class="text-sm md:text-lg -mt-5 mb-2 text-[#A098AE]">
               {{ teacher.subject }}
             </p>
             <div class="flex items-center gap-5 justify-center">
