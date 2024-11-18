@@ -4,107 +4,186 @@
       <MenuBar :toggleSidebar="toggleSidebar" />
       <HeaderComp :show-search="false">Add Students</HeaderComp>
     </div>
-    <!-- 2nd header -->
-    <div class="flex justify-between items-center py-1 px-0 lg:px-4">
-      <div
-        class="flex items-center rounded-[40px] pl-6 bg-white h-8 md:h-12 lg:h-14 w-[200px] xl:w-[300px]"
-      >
-        <img
-          src="/assets/Search.svg"
-          alt="searchicon"
-          class="w-4 h-4 md:w-6 md:h-6"
-        />
-        <input
-          type="text"
-          placeholder="Search here..."
-          class="pl-4 border-none text-[#303972] bg-transparent py-2"
-        />
+    <!-- Student details -->
+    <div class="bg-white rounded-2xl pb-10">
+      <div class="bg-gradient-to-b from-[#252472] to-[#2321BD] rounded-t-2xl">
+        <h3 class="text-xs text-white md:text-2xl font-bold pl-5 py-2">
+          Student Details
+        </h3>
       </div>
-      <div class="flex gap-12">
-        <div class="flex items-center space-x-4">
-          <button
-            class="w-12 md:w-52 h-8 md:h-12 lg:h-[60px] rounded-xl md:rounded-full flex border-[#4D44B5] text-lg border-2 items-center gap-5 justify-center bg-white text-black"
-          >
-            <p class="hidden md:block">Newest</p>
-            <img
-              src="/assets/dropdown.svg"
-              alt="notificationicon"
-              class="w-6 h-6"
+      <div class="grid grid-cols-1 md:grid-cols-2">
+        <div class="grid px-5 pt-5 space-y-3 w-full">
+          <p class="text-xs text-[#303972] md:text-lg font-semibold">
+            First Name *
+          </p>
+          <input
+            type="text"
+            placeholder="Maria"
+            class="pl-2 h-8 md:h-12 rounded-md border text-xs md:text-sm text-[#303972] bg-transparent py-2"
+          />
+        </div>
+        <div class="grid px-5 pt-5 space-y-3 w-full">
+          <p class="text-xs text-[#303972] md:text-lg font-semibold">
+            Last Name *
+          </p>
+          <input
+            type="text"
+            placeholder="Historia"
+            class="pl-2 h-8 md:h-12 rounded-md border text-xs md:text-sm text-[#303972] bg-transparent py-2"
+          />
+        </div>
+
+        <div class="grid px-5 pt-5 space-y-3 w-full">
+          <p class="text-xs text-[#303972] md:text-lg font-semibold">
+            Date & Place of Birth *
+          </p>
+          <div class="grid grid-cols-2 space-x-4">
+            <input
+              type="date"
+              placeholder="date"
+              class="pl-2 h-8 md:h-12 rounded-md border text-xs md:text-sm text-[#303972] bg-transparent py-2"
             />
-          </button>
-          <router-link
-            :to="'/addstudents'"
-            class="w-12 md:w-52 h-8 md:h-12 lg:h-[60px] rounded-xl md:rounded-full bg-gradient-to-b from-[#252472] to-[#2321BD] text-white text-lg items-center gap-5 flex justify-center"
-          >
-            <img src="/assets/add.svg" alt="notificationicon" class="w-4 h-4" />
-            <p class="hidden md:block">New Teacher</p>
-          </router-link>
+            <input
+              type="text"
+              placeholder="jakarta"
+              class="pl-2 h-8 md:h-12 rounded-md border text-xs md:text-sm text-[#303972] bg-transparent py-2"
+            />
+          </div>
+        </div>
+
+        <div class="grid px-5 pt-5 space-y-3 w-full">
+          <p class="text-xs text-[#303972] md:text-lg font-semibold">
+            Parent Name *
+          </p>
+          <input
+            type="text"
+            placeholder="Mano William"
+            class="pl-2 h-8 md:h-12 rounded-md border text-xs md:text-sm text-[#303972] bg-transparent py-2"
+          />
+        </div>
+
+        <div class="grid px-5 pt-5 space-y-3 w-full">
+          <p class="text-xs text-[#303972] md:text-lg font-semibold">Email *</p>
+          <input
+            type="email"
+            placeholder="Historia@mail.com"
+            class="pl-2 h-8 md:h-12 rounded-md border text-xs md:text-sm text-[#303972] bg-transparent py-2"
+          />
+        </div>
+        <div class="grid px-5 pt-5 space-y-3 w-full">
+          <p class="text-xs text-[#303972] md:text-lg font-semibold">Phone *</p>
+          <input
+            type="tel"
+            placeholder="+1234567890"
+            class="pl-2 h-8 md:h-12 rounded-md border text-xs md:text-sm text-[#303972] bg-transparent py-2"
+          />
+        </div>
+        <div class="grid px-5 pt-5 space-y-3 w-full">
+          <p class="text-xs text-[#303972] md:text-lg font-semibold">
+            Address *
+          </p>
+          <input
+            type="text"
+            placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+            class="px-2 h-12 md:h-24 rounded-md border w-full text-xs md:text-sm text-[#303972] bg-transparent text-pretty py-2"
+          />
+        </div>
+        <div class="grid px-5 pt-5 space-y-3 w-full">
+          <p class="text-xs text-[#303972] md:text-lg font-semibold">Photo *</p>
+          <input
+            type="file"
+            placeholder="lorem"
+            class="pl-2 h-12 md:h-24 rounded-md border text-xs md:text-sm text-[#303972] bg-transparent py-2"
+          />
         </div>
       </div>
     </div>
-    <!-- 2nd header ends -->
-    <div class="py-5 flex justify-center px-2 lg:px-5 space-y-4">
-      <div
-        class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-6 gap-x-8 gap-y-8"
-      >
-        <div
-          class="bg-white 2xl:w-[338px] xl:w-[250px] md:w-[220px] h-[280px] md:h-[352px] grid rounded-3xl lg:p-1 xl:p-5"
-          v-for="teacher in teachers.teachers"
-          :key="teacher.id"
-        >
-          <img
-            src="/assets/dots copy.svg"
-            alt="dots"
-            class="w-4 h-4 md:h-6 md:w-6 absolute mt-2 md:mt-2 ml-[135px] lg:mt-0 lg:ml-[170px] xl:mt-0 xl:ml-[180px] 2xl:mt-0 2xl:ml-64 md:ml-[170px] rounded-full"
+    <!-- Parent Details -->
+    <div class="bg-white rounded-2xl my-5 md:my-8 pb-8">
+      <div class="bg-gradient-to-b from-[#252472] to-[#2321BD] rounded-t-2xl">
+        <h3 class="text-xs text-white md:text-2xl font-bold pl-5 py-2">
+          Parent Details
+        </h3>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2">
+        <div class="grid px-5 pt-5 space-y-3 w-full">
+          <p class="text-xs text-[#303972] md:text-lg font-semibold">
+            First Name *
+          </p>
+          <input
+            type="text"
+            placeholder="Maria"
+            class="pl-2 h-8 md:h-12 rounded-md border text-xs md:text-sm text-[#303972] bg-transparent py-2"
           />
-          <div class="items-center justify-items-center grid p-5">
-            <div
-              class="bg-[#C1BBEB] rounded-full w-20 h-20 md:h-[120px] md:w-[120px]"
-            >
-              <!-- <img src="" alt="Profile" class="h-10 w-10 rounded-full" /> -->
-            </div>
-            <h3
-              class="font-bold mb-4 text-center text-lg md:text-2xl text-[#303972]"
-            >
-              {{ teacher.name }}
-            </h3>
-            <p class="text-sm md:text-lg -mt-5 mb-2 text-[#A098AE]">
-              {{ teacher.subject }}
-            </p>
-            <div class="flex items-center gap-5 justify-center">
-              <div
-                class="bg-[#4D44B5] rounded-full items-center flex justify-center w-10 h-10"
-              >
-                <img
-                  src="/assets/call-white.svg"
-                  alt="call icon"
-                  class="h-6 w-6 outline-white rounded-full"
-                />
-              </div>
-              <div
-                class="bg-[#4D44B5] rounded-full items-center flex justify-center w-10 h-10"
-              >
-                <img
-                  src="/assets/email-white.svg"
-                  alt="emailicon"
-                  class="h-6 w-6 rounded-full"
-                />
-              </div>
-            </div>
-          </div>
+        </div>
+        <div class="grid px-5 pt-5 space-y-3 w-full">
+          <p class="text-xs text-[#303972] md:text-lg font-semibold">
+            Last Name *
+          </p>
+          <input
+            type="text"
+            placeholder="William"
+            class="pl-2 h-8 md:h-12 rounded-md border text-xs md:text-sm text-[#303972] bg-transparent py-2"
+          />
+        </div>
+
+        <div class="grid px-5 pt-5 space-y-3 w-full">
+          <p class="text-xs text-[#303972] md:text-lg font-semibold">Email *</p>
+          <input
+            type="email"
+            placeholder="Historia@mail.com"
+            class="pl-2 h-8 md:h-12 rounded-md border text-xs md:text-sm text-[#303972] bg-transparent py-2"
+          />
+        </div>
+        <div class="grid px-5 pt-5 space-y-3 w-full">
+          <p class="text-xs text-[#303972] md:text-lg font-semibold">Phone *</p>
+          <input
+            type="tel"
+            placeholder="+1234567890"
+            class="pl-2 h-8 md:h-12 rounded-md border text-xs md:text-sm text-[#303972] bg-transparent py-2"
+          />
+        </div>
+        <div class="grid px-5 pt-5 space-y-3 w-full">
+          <p class="text-xs text-[#303972] md:text-lg font-semibold">
+            Address *
+          </p>
+          <input
+            type="text"
+            placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+            class="px-2 h-12 md:h-24 rounded-md border w-full text-xs md:text-sm text-[#303972] bg-transparent text-pretty py-2"
+          />
+        </div>
+        <div class="grid px-5 pt-5 space-y-3 w-full">
+          <p class="text-xs text-[#303972] md:text-lg font-semibold">
+            Payments *
+          </p>
+
+          <option value="cash">cash</option>
         </div>
       </div>
+    </div>
+    <!-- save -->
+    <div class="float-right space-x-4 flex mb-5 md:mb-8">
+      <button
+        class="border-[#4D44B5] border-2 rounded-full text-xs md:text-sm text-[#4D44B5] px-3 py-2 md:px-4 md:py-3"
+      >
+        save as draft
+      </button>
+      <button
+        class="bg-[#4D44B5] border-2 rounded-3xl text-xs md:text-sm text-white px-3 py-2 md:px-5 md:py-3"
+      >
+        submit
+      </button>
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
-// import { defineComponent } from 'vue'
-import { useTeachersStore } from '@/stores/teachers'
+// import { useTeachersStore } from '@/stores/teachers'
 import HeaderComp from '@/components/HeaderComp.vue'
 import MenuBar from '@/components/MenuBar.vue'
 
-const teachers = useTeachersStore()
+// const teachers = useTeachersStore()
 const { toggleSidebar } = defineProps<{
   toggleSidebar: () => void
 }>()

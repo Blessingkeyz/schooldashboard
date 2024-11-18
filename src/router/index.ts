@@ -13,12 +13,14 @@ import FoodsPage from '@/views/FoodsPage.vue'
 import UserPage from '@/views/UserPage.vue'
 import ChatPage from '@/views/ChatPage.vue'
 import LatestActivity from '@/views/LatestActivity.vue'
+import TeacherDetails from '@/views/TeacherDetails.vue'
 
 const routes = [
   { path: '/', name: 'Dashboard', component: DashboardPage },
   { path: '/students', name: 'Students', component: StudentsPage },
   { path: '/addstudents', name: 'AddStudents', component: AddStudents },
   { path: '/teachers', name: 'Teachers', component: TeachersPage },
+  { path: '/teacherdetails', name: 'Teachers', component: TeacherDetails },
   { path: '/addteachers', name: 'AddTeachers', component: AddTeachers },
   { path: '/events', name: 'Events', component: EventsPage },
   { path: '/finance', name: 'Finance', component: FinancePage },
