@@ -52,14 +52,15 @@
           v-for="teacher in teachers.teachers"
           :key="teacher.id"
         >
-          <img
-            src="/assets/dots copy.svg"
-            alt="dots"
-            class="w-4 h-4 md:h-6 md:w-6 absolute mt-2 md:mt-2 ml-[135px] lg:mt-0 lg:ml-[170px] xl:mt-0 xl:ml-[180px] 2xl:mt-0 2xl:ml-64 md:ml-[170px] rounded-full"
-          />
-          <div class="items-center justify-items-center grid p-5">
+          <div class="items-center grid p-5">
+            <a href="/teacherdetails" class="justify-self-end"
+              ><img
+                src="/assets/dots copy.svg"
+                alt="dots"
+                class="w-4 h-4 md:h-6 md:w-6"
+            /></a>
             <div
-              class="bg-[#C1BBEB] rounded-full w-20 h-20 md:h-[120px] md:w-[120px]"
+              class="bg-[#C1BBEB] justify-self-center rounded-full w-20 h-20 md:h-[120px] md:w-[120px]"
             >
               <!-- <img src="" alt="Profile" class="h-10 w-10 rounded-full" /> -->
             </div>
@@ -68,7 +69,7 @@
             >
               {{ teacher.name }}
             </h3>
-            <p class="text-sm md:text-lg -mt-5 mb-2 text-[#A098AE]">
+            <p class="text-sm md:text-lg -mt-5 mb-2 text-center text-[#A098AE]">
               {{ teacher.subject }}
             </p>
             <div class="flex items-center gap-5 justify-center">
